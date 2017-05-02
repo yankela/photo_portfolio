@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gallery.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= image_tag @gallery.url %>
+</p>
+
+<h3>Photos</h3>
+<% @gallery.photos.each do |photo| %>
+  <p>
+    <%= image_tag photo.url %>
+  </p>
+<% end %>
+
+<h3>New Photo</h3>
+<%= link_to 'New Photo', new_photo_path %>
+
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>
